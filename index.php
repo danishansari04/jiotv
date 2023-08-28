@@ -1,0 +1,92 @@
+<!--
+* Copyright 2021-2023 SnehTV, Inc.
+* Licensed under MIT (https://github.com/mitthu786/TS-JioTV/blob/main/LICENSE)
+* Created By : TechieSneh
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DISTARK TV</title>
+    <meta charset="utf-8">
+    <meta name="description" content="ENJOY FREE LIVE JIOTV">
+    <meta name="keywords" content="JIOTV, LIVETV, SPORTS, MOVIES, MUSIC">
+    <meta name="author" content="Techie Sneh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/37fVLxB/f4027915ec9335046755d489a14472f2.png">
+    <link rel="stylesheet" href="app/assets/css/techiesneh.min.css">
+    <link rel="stylesheet" href="app/assets/css/search.css">
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.5/lazysizes.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="jtvh1">
+        <h1>DISTARK LIVE</h1>
+    </div>
+
+    <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Search ..." />
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="filters">
+                
+                <div id="genreFilter">
+
+                </div>
+
+                
+                <div id="langFilter">
+                </div>
+            </div>
+            <div id="charactersList" class="row">
+            </div>
+        </div>
+    </div>
+    <script src="app/assets/js/search.js"></script>
+</body>
+<script>
+    document.getElementById("loginButton").addEventListener("click", function() {
+        window.location.href = "app/login.php";
+    });
+
+    document.getElementById("logoutButton").addEventListener("click", function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "app/logout.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+            }
+        };
+        xhr.send();
+    });
+
+    const PlayListButton = document.getElementById('PlayListButton');
+    PlayListButton.addEventListener('click', () => {
+        const currentProtocol = window.location.protocol;
+        const currentHost = window.location.host;
+        const currentPathname = window.location.pathname.split("/");
+        const currentURL = currentProtocol + '//' + currentHost + '/' + currentPathname[1] + '/app/playlist.php';
+        navigator.clipboard.writeText(currentURL)
+            .then(() => {
+                alert('PlayList URL copied to clipboard!');
+            })
+            .catch((error) => {
+                console.error('Error copying URL:', error);
+            });
+    });
+</script>
+<script>
+     $(".card-text").find(".badge.bg-dark:eq(2)").html('DANISH ANSARI')
+    setInterval(() => {
+        $(".card-text").find(".badge.bg-dark:eq(2)").html('DANISH ANSARI') 
+    }, 1000);
+</script>
+
+</html>
