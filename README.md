@@ -1,166 +1,64 @@
-<h1 align='center'>✯ JɪᴏTV+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jio_TV_logo.svg/1200px-Jio_TV_logo.svg.png" width="40" height="40"> Pʟᴀʏ  ✯</h1>
+# JioTVServer
 
-<!--
-* Copyright 2021-2023 SnehTV, Inc.
-* Licensed under MIT (https://github.com/mitthu786/TS-JioTV/blob/main/LICENSE)
-* Created By : TechieSneh
--->
+Grab streaming links of JioTV channels and play on mobile, PC etc..
 
-<h4 align='center'>📺 The PHP Script For Grab Streaming Links and Play it ,<br> This Works Only on Android & Android TV
-Through LocalHost <br><br>🌟 Star This Repository Before Copying 😎<br>Don't Edit This Script
-😈<br><br>Login With Your Own Credentials In This Script</h4>
-<br>
+NOTE: It only works in Indian VPS due to geoblocking
 
-<h3>♻️ JOIN FOR UPDATES :</h3>
+## Features
+- Free of cost :)
+- Easy to set-up and use
+- High Quality Streaming
+- Fast 🔥
 
-- JOIN TELEGRAM CHANNEL
-- https://bit.ly/3qzL7uD
+## Installation
 
-<h3>😇 SCRIPT FEATURES :</h3>
+### Android/Termux
+<details>
+  <summary>Click to expand!</summary>
 
-- Dropdown Filters Added
-- Will Works In All Qualities
-- Multi Audio Stream Support
-- Web Play with Quality Change Supports
-- Works on Mobile, AndroidTV or PC Browser Perfect
+```bash
+# Upgrade system packages
+pkg update && pkg upgrade
 
-<h3>💖 PLAYER FEATURES :</h3>
+# Get 'git' and 'PHP'
+pkg install git php
 
-- Search Feature Added<br>
+# Download script
+git clone https://github.com/danishansari04/jiotv
 
-1. 🔍 SEARCH BY CHANNEL NAME
-
+# Run the script
+php -S localhost:8585 -t "$HOME/jiotv"
 ```
-e.g.  Sony,Zee,Star ...
-```
+</details>
 
-2. 🔍 SEARCH BY GENRE
+## Usage
 
-```
-e.g.  Entertainment,Kids,Movies,Music ...
-```
+- [For first time users] Generate credentials using your Jio phone number and password.
 
-3. 🔍 SEARCH BY LANGUAGE
+  <details>
+  Open your web browser and put the URL as follows
+  
+  ```
+  Format: http://localhost:8585/login.php?user=<ph.no without +91>&pass=<password>
+  Example: http://localhost:8585/login.php?user=6560263759&pass=JioTVRocks
+  ```
+  </details>
 
-```
-e.g.  Hindi,Tamil,Kannada,Odia ...
-```
+- For Web Play, the URL is: `http://localhost:8585`
+- For IPTV Players (OTT Navigator or TiviMate), the playlist URL is: `http://localhost:8585/playlist.php`
 
-<br>
 
-<h3>📸 SCREENSHOTS : </h3>
+## Credits
 
-<img src="https://i.ibb.co/yfpvJ9Y/main.png" width="400" height="200">
+Huge thanks to the following people/projects that helped make this script what it is.
 
-<br>
+- techiesneh (base PHP script)
+- avipatilpro (base PHP script)
+- AvinashReddy3108 (base PHP script)
+- botallen (for Kodi plugin)
+- jeelpatel231 (helping with web play UI)
+- elvistony (for Python version of JioTVServer)
 
-<img src="https://i.ibb.co/Dz4Nhxm/play.png" width="400" height="200">
+## Contributing
 
-<br>
-
-<h2>🍁 HOW TO USE : </h2>
-
-#### ♢ Login Method 1 :
-
-1. First Download This Application<br>
-
-- KSWEB PRO ( Php Web Server ) <br>
-
-```py
-https://dl1.apkhome.net/2019/6/KSWEB-3.93%20Pro.apk
-```
-
-```py
-https://oceanofapk.com/ksweb-server-php-mysql-v3-961-pro-apk-free-download/
-```
-
-```py
-https://s3.dlandroid.com/apps/KSWEB-server[dlandroid.com].apk
-```
-
-2.  Then Download This Zip File<br>
-
-- [TS-JioTV Zip](https://tsnehcors.mitthu.workers.dev/?https://github.com/mitthu786/TS-JioTV/blob/main/TS-JioTV.zip?raw=true) <br>
-
-1. Locate & Extract all Files in LocalHost (Htdocs) Root Folder <br>
-2. Open KSWEB App & Start The Server <br>
-3. Run login.php file for a first time <br>
-4. Put Your E-Mail or Mobile Number without +91 & Password in below Link
-
-<br>
-
-```py
-http://localhost:8080/TS-JioTV/app/login.php
-```
-
-7. Now Open [JIOTV WEB] Below Link :
-
-```py
-http://localhost:8080/TS-JioTV/
-```
-
-8. Click above link in any Browser . You Will See all Jio Channels . <br>
-9. Click On Channel and Play <br>
-
-#### ♢ Login Method 2 :
-
-- Follow Above Instructions First & Then Try To Login with this Method.
-
-1. Put Your E-Mail or Mobile Number without +91 & Password in Below Link <br>
-
-```py
-http://localhost:8080/TS-JioTV/login_direct.php?user=`NUMBER`&pass=`PASSWORD`
-```
-
-2. Now Open [JIOTV WEB] Below Link :
-
-```py
-http://localhost:8080/TS-JioTV/
-```
-
-3. Click above link in any Browser . You Will See all Jio Channels . <br>
-4. Click On Channel and Play <br>
-
-#### ♢ Play Methods :
-
-• In Tivimate or OTT Navigator Player Put Links Format Like Below :<br>
-
-```py
-http://localhost:8080/TS-JioTV/playlist.php
-```
-
-• Hurrah !! Now Play & Enjoy with your Jio Channels .
-
-<!--
-* Copyright 2021-2023 SnehTV, Inc.
-* Licensed under MIT (https://github.com/mitthu786/TS-JioTV/blob/main/LICENSE)
-* Created By : TechieSneh
--->
-
-### 😛 GENERATE CREDS.JSON (OTP USERS):
-
-1. ✍️ FOR SSO TOKEN : [JioLogin](http://jiologin.unaux.com)
-2. For This You Need JioID Number and Password
-3. You Can Also get Data with OTP
-
-- `user` = Username / Mobile No.
-- `pass` = Password
-
-<h3>🚸 WARNINGS :</h3>
-
-- This is Just For Educational Purpose
-- Don't Sell this Script, This is 💯% Free
-
-<h3>🤗 CONTACT US : </h3>
-
-- TELEGRAM CHANNEL [JOIN NOW](https://bit.ly/3qzL7uD)
-- FOR ANY QUERY CONTACT US ON [ProtonMail](mailto:techiesneh@protonmail.com)
-
-<br>
-
----
-
-<h4 align='center'>© 2021-23 Techie Sneh</h4>
-
-<!-- DO NOT REMOVE THIS CREDIT -->
-<!-- © 2021-23 TechieSneh -->
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
